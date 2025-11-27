@@ -2,9 +2,9 @@ import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { RPMPlan } from "../types";
 
 export const generateRPMPlan = async (tasks: string, goals: string): Promise<RPMPlan> => {
-  const apiKey = process.env.API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    throw new Error("API Key is missing.");
+    throw new Error("GEMINI_API Key is missing.");
   }
 
   const ai = new GoogleGenAI({ apiKey });
